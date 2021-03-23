@@ -1,0 +1,46 @@
+<%- include("partials/header") -%>
+<div class="chart-container">
+<div id="chart">
+
+<% let val = [];%>
+<% data.values.forEach(function(element) { %>
+<% val.push(element.value); %>
+<% }) %>
+<%let count = 0%>
+<% val.forEach(function(element) { %>
+<% if (element == Math.max(...val)) { %>
+	<div class="bar" style="grid-row-start:<%= 100 - data.values[count].value%>;background: linear-gradient(-180deg, #FFF2D1 1%, #FFD66C 100%); box-shadow: inset 0px 0px 20px 0px #FFB039,inset -1px 1px 1px 0px #FFFFFF">
+  		<span class="span-value" style="color: #261C00"><%= data.values[count].value %></span>
+  		<span class="span-title"><%= data.values[count].title %></span>
+  	</div>
+<% } else if (element !== 0) { %>
+	<div class="bar" style="grid-row-start: <%= 100 - data.values[count].value %>">
+  		<span class="span-value"><%= data.values[count].value %></span>
+  		<span class="span-title"><%= data.values[count].title %></span>
+  	</div>
+<% } %>
+<% count++ %>
+<% }) %>
+  
+</div>
+</div> 
+
+<div class="profile-part">
+	<div class="el-1">
+		<img class="" style="width: 40px;height: 40px;border-radius: 100px;" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[0].avatar%>?raw=true" alt="avatar-img">	
+	</div>
+	<div class="el-2">
+		<p class="" style="margin: 0;color: #261C00;font-weight: bold;font-size: 16px;line-height: 18px;letter-spacing: 0px;text-align: left;"><%= data.users[0].name%></p>
+		<p class="" style="margin: 0;color: #BFBFBF;font-weight: regular;font-size: 14px;line-height: 16px;letter-spacing: 0px;text-align: left;"><%= data.users[0].valueText%></p>
+	</div>
+	<div class="stick"></div>	
+	<div class="el-3">
+		<img class="" style="width: 40px;height: 40px;border-radius: 100px;" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[1].avatar%>?raw=true" alt="avatar-img">
+	</div>
+	<div class="el-4">
+		<p class="" style="margin: 0;color: #261C00;font-weight: bold;font-size: 16px;line-height: 18px;letter-spacing: 0px;text-align: left;"><%= data.users[1].name%></p>
+		<p class="" style="margin: 0;color: #BFBFBF;font-weight: regular;font-size: 14px;line-height: 16px;letter-spacing: 0px;text-align: left;"><%= data.users[1].valueText%></p>
+	</div>
+</div>
+
+<%- include("partials/footer") -%>

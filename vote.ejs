@@ -1,0 +1,91 @@
+<%- include("partials/header") -%>
+
+<div class="wrapper">
+
+   <div class="box1" style="
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    ">
+		<div class="profile dyn" style="margin-top: 50%;">
+			<img class="avatar" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[0].avatar%>?raw=true" alt="avatar-img">
+			<p class="name"><%= users[0].name%></p>
+		</div>
+	</div>
+   <div class="box2" style="
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    ">
+		<div class="profile dyn">
+			<img class="avatar" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[1].avatar%>?raw=true" alt="avatar-img">
+			<p class="name"><%= users[1].name%></p>
+		</div>
+	</div>
+   	<div class="box3" style="
+   	grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+   ">		
+   		<div class="profile dyn">
+			<img class="avatar" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[2].avatar%>?raw=true" alt="avatar-img">
+			<p class="name"><%= users[2].name%></p>
+		</div>
+	</div>
+   <div class="box4" style="
+   	grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    position: relative;
+   ">
+   	<button><img class="avatar vote" style=" transform: rotate(180deg); margin-top: 52px;" src="https://raw.githubusercontent.com/yndx-shri/shri-2021-task-1/e4e1bd8414b846dcb42af8e6993e2c7a5a124ab3/assets/images/button-light.svg" alt="button-img"></button>
+	</div>
+   <div class="box5" style="
+   	grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    position: relative;
+   ">
+   	<button><img class="avatar vote" style="margin-top: 26px;" src="https://raw.githubusercontent.com/yndx-shri/shri-2021-task-1/e4e1bd8414b846dcb42af8e6993e2c7a5a124ab3/assets/images/button-light.svg" alt="button-img"></button>
+   </div>
+    <div class="box6" style="
+   	grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+   ">
+   		<div class="profile dyn">
+			<img class="avatar" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[3].avatar%>?raw=true" alt="avatar-img">
+			<p class="name"><%= users[3].name%></p>
+		</div>
+   </div>
+   <div class="box7" style="
+   	grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+   ">
+   		<div class="profile dyn">
+			<img class="avatar" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[4].avatar%>?raw=true" alt="avatar-img">
+			<p class="name"><%= users[4].name%></p>
+		</div>
+   </div>
+    <div class="box8" style="
+   	grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+   ">
+   		<div class="profile dyn" style="margin-top: 50%;">
+			<img class="avatar" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[5].avatar%>?raw=true" alt="avatar-img">
+			<p class="name"><%= users[5].name%></p>
+		</div>
+   </div>
+</div>
+
+<%- include("partials/footer") -%>

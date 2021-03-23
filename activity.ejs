@@ -1,0 +1,73 @@
+<%- include("partials/header") -%>
+
+  <div id="chartholder"></div>
+  
+  <script>
+var chartHolder = d3.select("#chartholder");
+
+var myData = [
+   <% for (var day in data.data) {%>
+  {
+    key: "<%= day%>",
+    values: [
+      <% for (let time in Object.values(data.data[day])) {%>
+      { key: "<%= time%>", value: <%= data.data[day][time] %>},
+      <% } %>
+    ]
+  },
+ <% } %> 
+];
+
+// Declare the chart component
+var myChart = d3.x3d.chart.barChartMultiSeries();
+
+// Attach chart and data to the chartholder
+chartHolder
+  .datum(myData)
+  .call(myChart);
+  </script>
+
+<div class="activity-grid" style="
+display: inline-grid;
+grid-template-columns: repeat(5, 60px);
+grid-template-rows: 38px;
+grid-column-gap: 8px;
+">
+  <div>
+    <div class="bl" style="
+    background: radial-gradient(circle at 50% 50%, #FAFAFA 0%, #FAFAFA 100%);
+    box-shadow: inset 1px 1px 16px 0px #6A6A6A,inset -1px 0px 2px 0px #FAFAFA;
+    "></div>
+    <p class="blp">2 часа</p>
+  </div>
+  <div>
+    <div class="bl" style="
+    background: radial-gradient(circle at 50% 50%, #FAFAFA 0%, #FAFAFA 100%);
+    box-shadow: inset 1px 1px 16px 0px #6A6A6A,inset -1px 0px 2px 0px #FAFAFA;
+    "></div>
+    <p class="blp">0</p>
+  </div>
+  <div>
+    <div class="bl" style="
+    background: radial-gradient(circle at 50% 50%, #FAFAFA 0%, #FAFAFA 100%);
+    box-shadow: inset 1px 1px 16px 0px #6A6A6A,inset -1px 0px 2px 0px #FAFAFA;
+    "></div>
+    <p class="blp">1 - 2</p>
+  </div>
+  <div>
+    <div class="bl" style="
+    background: radial-gradient(circle at 50% 50%, #FFF6DD 9%, #FFFEFA 100%);
+    box-shadow: inset 0px 0px 20px 0px #FFB039,inset -1px 1px 1px 0px #FFFFFF;
+    "></div>
+    <p class="blp">3 - 4</p>
+  </div>
+  <div>
+    <div class="bl" style="
+    background: radial-gradient(circle at 50% 50%, #FFBA06 0%, #FFF2AD 100%);
+    box-shadow: inset 0px 0px 20px 0px #FFB039,inset -1px 1px 1px 0px #FFFFFF;
+    "></div>
+    <p class="blp">5 - 6</p>
+  </div>
+</div>
+
+<%- include("partials/footer") -%>

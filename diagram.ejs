@@ -1,0 +1,96 @@
+<%- include("partials/header") -%>
+<div class="chart-container">
+  <div class="pie-grid">
+    <div id="my_dataviz">
+      <p class="inchart-1" style="position: absolute; margin: 0; top: 80px; left: 60px;width: 120px;"><%= data.totalText%></p>
+      <p class="inchart-2" style="position: absolute; margin: 0; top: 130px; left: 60px; width: 120px;"><%= data.differenceText%></p>
+    </div>
+    <div class="line">
+      <div class="circle" style="display: inline-block; width: 16px; height: 16px; border-radius: 50%; background-color: rgba(255, 184, 0, 0.56);"></div>
+      <p class="pd" style="display: inline-block;"><%= data.categories[0].title%></p>
+      <p class="pdd" style="display: inline-block;">+<%- parseInt(data.categories[0].differenceText, 10)%></p>
+      <p class="pddd" style="display: inline-block;"><%- parseInt(data.categories[0].valueText, 10)%></p>
+      <div class="str"></div>
+    </div>
+
+    <div class="line">
+      <div class="circle" style="display: inline-block; width: 16px; height: 16px; border-radius: 50%; background-color: rgba(255, 184, 0, 0.24);"></div>
+      <p class="pd" style="display: inline-block;"><%= data.categories[1].title%></p>
+      <p class="pdd" style="display: inline-block;">+<%- parseInt(data.categories[1].differenceText, 10)%></p>
+      <p class="pddd" style="display: inline-block;"><%- parseInt(data.categories[1].valueText, 10)%></p>
+      <div class="str"></div>
+    </div>
+    
+    <div class="line">
+      <div class="circle" style="display: inline-block; width: 16px; height: 16px; border-radius: 50%; background-color: rgba(191, 191, 191, 0.345);"></div>
+      <p class="pd" style="display: inline-block;"><%= data.categories[2].title%></p>
+      <p class="pdd" style="display: inline-block;">+<%- parseInt(data.categories[2].differenceText, 10)%></p>
+      <p class="pddd" style="display: inline-block;"><%- parseInt(data.categories[2].valueText, 10)%></p>
+      <div class="str"></div>
+    </div>
+
+    <div class="line">
+      <div class="circle" style="display: inline-block; width: 16px; height: 16px; border-radius: 50%; background-color: rgba(166, 166, 166, 0.1725);"></div>
+      <p class="pd" style="display: inline-block;"><%= data.categories[3].title%></p>
+      <p class="pdd" style="display: inline-block;">+<%- parseInt(data.categories[3].differenceText, 10)%></p>
+      <p class="pddd" style="display: inline-block;"><%- parseInt(data.categories[3].valueText, 10)%></p>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+
+// set the dimensions and margins of the graph
+var width = 240
+    height = 240
+    margin = 0
+
+// The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+var radius = Math.min(width, height) / 2 
+
+// append the svg object to the div called 'my_dataviz'
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+// Create data
+var data = {
+  <% data.categories.forEach(function(element) {%>
+    "<%= element.title%>": <%- parseInt(element.valueText, 10)%>,
+    <%console.log(element)%>
+  <% }) %>
+}
+
+// set the color scale
+var color = d3.scaleOrdinal()
+  .domain(data)
+  .range(["rgba(255, 184, 0, 0.56)", "rgba(255, 184, 0, 0.24)", "rgba(191, 191, 191, 0.345)", "rgba(166, 166, 166, 0.1725)"])
+
+// Compute the position of each group on the pie:
+var pie = d3.pie()
+  .value(function(d) {return d.value; })
+var data_ready = pie(d3.entries(data))
+
+// Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+svg
+  .selectAll('whatever')
+  .data(data_ready)
+  .enter()
+  .append('path')
+  .attr('d', d3.arc()
+    .innerRadius(80)         // This is the size of the donut hole
+    .outerRadius(radius)
+  )
+  .attr('fill', function(d){ return(color(d.data.key)) })
+  .attr("stroke", "white")
+  .style("stroke-width", "5px")
+  .style("opacity", 0.7)
+
+</script>
+
+<%- include("partials/footer") -%>

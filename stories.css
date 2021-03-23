@@ -1,0 +1,349 @@
+/*Leaders styling properties*/
+body {
+	color: #261C00;
+	font-family: "Roboto";
+	font-weight: medium;
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0px;
+	margin: 0;
+	text-align: center;
+}
+canvas {
+	height: 300px;
+	margin: auto;
+}
+.title {
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 32px;
+	margin: 20px 52px 8px;
+}
+.subtitle {
+	color: #BFBFBF;
+	font-weight: bold;
+	margin: 0px 52px;
+}
+.container {
+	height: 270px;
+	margin: 30px auto 0;
+	position: relative;
+	width: 536px;
+}
+.content {
+	display: inline-block;
+	position: absolute;
+	width: 120px;
+}
+.profile {
+	height: 162px;
+	width: 104px;
+	border-radius: 8px;
+	position: relative;
+}
+.avatar {
+	border-radius: 100px;
+	height: 64px;
+	width: 64px;
+	margin: 20px 20px 0px;
+}
+.name {
+	font-weight: bold;
+	margin: 6px 4px 4px;
+}
+.emoji {
+	position: absolute;
+	left: 30px;
+	bottom: 110px;
+	font-size: 32px;
+}
+.value {
+	color: #BFBFBF;
+	font-size: 14px;
+	margin: 0 4px 16px;
+}
+.block {
+	border-radius: 8px 8px 0px 0px;
+	background: linear-gradient(-180deg, #F4F4F4 1%, #E9E9E9 100%, #EAEAEA 100%);
+	box-shadow: inset 0px 0px 20px 0px #CFCFCF,inset -1px 1px 1px 0px #FFFFFF;
+	height: 68px;
+	position: relative;
+	width: 120px;
+}
+.num {
+	position: absolute;
+	margin: 0;
+	top: 18px;
+}
+/*Vote styling properties*/
+button {
+	border: none;
+	background-color: transparent;
+	height: 64px;
+	width: 64px;
+}
+.wrapper {
+    display: inline-grid;
+    grid-template-columns: 104px 104px 64px 104px 104px;
+    grid-template-rows: repeat(2, 142px);
+   	grid-column-gap: 31px;
+   	grid-row-gap: 4px;
+
+}
+.box1 {
+	grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.box2 {
+	grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.box3 {
+	grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+}
+.box4 {
+	grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.box5 {
+	grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.box6 {
+	grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.box7 {
+	grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    position: relative;
+}
+.box8 {
+	grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    position: relative;
+}
+.dyn:hover {
+	border-radius: 6px;
+	background: linear-gradient(-180deg, #F4F4F4 1%, #E9E9E9 100%, #EAEAEA 100%);
+	box-shadow: inset 0px 0px 20px 0px #CFCFCF,inset -1px 1px 1px 0px #FFFFFF;
+	height: 142px;
+	width: 104px;
+}
+/*.dyn2 {
+	background: linear-gradient(-180deg, #FFF2D1 1%, #FFD66C 100%);
+	box-shadow: inset 0px 0px 20px 0px #FFB039,inset -1px 1px 1px 0px #FFFFFF;
+}*/
+.vote {
+	margin: 0px;
+}
+/*Chart styling properties*/
+#chart {
+  display: grid;
+  grid-template-columns: repeat(11, 40px);
+  grid-template-rows: repeat(100, 1fr);
+  grid-column-gap: 24px;
+  height: 177px;
+  width: 680px;
+}
+.chart-container {
+	margin: 26px auto 25px;
+	display: flex;
+  	justify-content: center;
+}
+[class*="bar"] {
+  grid-row-start: 1;
+  grid-row-end: 101;
+  border-radius: 6px;
+  background: linear-gradient(-180deg, #F4F4F4 1%, #E9E9E9 100%, #EAEAEA 100%);
+  box-shadow: inset 0px 0px 20px 0px #CFCFCF,inset -1px 1px 1px 0px #FFFFFF;
+  margin: 0;
+  position: relative;
+}
+.span-value {
+	position: absolute;
+	top: -26px;
+	left: 2px;
+	color: #BFBFBF;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 22px;
+	letter-spacing: 0px;
+	text-align: center;
+}
+.span-title {
+	position: absolute;
+	bottom: -26px;
+	left: 5px;
+	color: #BFBFBF;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: center;	
+}
+.profile-part {
+	display: inline-grid;
+	grid-template-columns: 40px 166px 2px 40px 166px;
+	grid-template-rows: 20px 20px;
+	grid-column-gap: 14px;
+	grid-row-gap: 4px;
+	margin: 25px auto;
+}
+.el-1 {
+	grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.el-2 {
+	grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.el-3 {
+	grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;	
+}
+.el-4 {
+	grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;	
+}
+.stick {
+	grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background: linear-gradient(-180deg, #F4F4F4 1%, #E9E9E9 100%, #EAEAEA 100%);
+	box-shadow: inset 0px 0px 20px 0px #CFCFCF,inset -1px 1px 1px 0px #FFFFFF;
+}
+#my_dataviz {
+	grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    position: relative;
+}
+.pie-grid {
+	display: grid;
+	grid-template-columns: 240px 344px;
+	grid-column-gap: 40px;
+	height: auto;
+	width: auto;	
+}
+.inchart-1 {
+	color: #261C00;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 22px;
+	letter-spacing: 0px;
+	text-align: center;
+}
+.inchart-2 {
+	color: #BFBFBF;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: center;
+	}
+.line {
+	position: relative;
+	height: 50px;
+	width: 304px;
+}
+.circle {
+	position: absolute;
+	left: 0px;
+	top: 16px;
+}
+.pd {
+	position: absolute;
+	margin: 0;
+	top: 16px;
+	left: 26px;
+	color: #261C00;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: left;
+}
+.pdd {
+	position: absolute;
+	margin: 0;
+	top: 16px;
+	right: 35px;
+	color: #918F8A;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: right;
+}
+.pddd {
+	position: absolute;
+	margin: 0;
+	top: 16px;
+	right: 0;
+	color: #918F8A;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: right;
+}
+.str {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	height: 2px;
+	width: 304px;
+	opacity: 0.30000001192092896;
+	background: #918F8A;
+}
+.bl {
+	height: 12px;
+	width: 60px;
+	border-radius: 2px;
+}
+.blp {
+	color: #BFBFBF;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: center;
+	margin: 8px 0;
+}

@@ -1,0 +1,67 @@
+<%- include("partials/header") -%>
+
+<div class="container">
+
+<div class="content" style="bottom: 0;left: 0;">
+	<div class="profile">
+		<p class="emoji"></p>
+		<img class="avatar" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[4].avatar%>?raw=true" alt="avatar-img">
+		<p class="name"><%= data.users[4].name%></p>
+		<p class="value"><%= data.users[4].valueText%></p>
+	</div>
+	<div class="block">
+		<h1 class="title num" style="left: 42px; right: 42px;">5</h1>
+	</div>
+</div>
+
+<div class="content" style="bottom: 0; left: 104px;">
+	<div class="profile">
+		<p class="emoji"></p>
+		<img class="avatar" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[2].avatar%>?raw=true" alt="avatar-img">
+		<p class="name"><%= data.users[2].name%></p>
+		<p class="value"><%= data.users[2].valueText%></p>
+	</div>
+	<div class="block" style="height: 88px;">
+		<h1 class="title num" style="left: 42px; right:42px;">3</h1>
+	</div>
+</div>
+
+<div class="content" style="bottom: 0; left: 208px;">
+	<div class="profile" style="margin: auto;">
+		<p class="emoji"><%= data.emoji%></p>
+		<img class="avatar" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[0].avatar%>?raw=true" alt="avatar-img">
+		<p class="name"><%= data.users[0].name%></p>
+		<p class="value"><%= data.users[0].valueText%></p>
+	</div>
+	<div class="block" style="z-index: 1;height: 108px; background: linear-gradient(-180deg, #FFF2D1 1%, #FFD66C 100%);box-shadow: inset 0px 0px 20px 0px #FFB039,inset -1px 1px 1px 0px #FFFFFF;">
+		<h1 class="title num" style="left: 18px; right: 18px;">1</h1>
+	</div>
+</div>
+
+<div class="content" style="bottom: 0; left: 312px;">
+	<div class="profile" style="margin: auto;">
+		<p class="emoji"></p>
+		<img class="avatar" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[1].avatar%>?raw=true" alt="avatar-img">
+		<p class="name"><%= data.users[1].name%></p>
+		<p class="value"><%= data.users[1].valueText%></p>
+	</div>
+	<div class="block" style="height: 88px;">
+		<h1 class="title num" style="left: 42px; right:42px;">2</h1>
+	</div>
+</div>
+
+<div class="content" style="bottom: 0; left: 416px;">
+	<div class="profile" style="margin: auto;">
+		<p class="emoji"></p>
+		<img class="avatar" src="https://github.com/yndx-shri/shri-2021-task-1/blob/master/assets/images/1x/<%= data.users[3].avatar%>?raw=true" alt="avatar-img">
+		<p class="name"><%= data.users[3].name%></p>
+		<p class="value"><%= data.users[3].valueText%></p>
+	</div>
+	<div class="block" style="z-index:-1;">
+		<h1 class="title num" style="left: 42px; right:42px;">4</h1>
+	</div>
+</div>
+
+</div>
+
+<%- include("partials/footer") -%>
